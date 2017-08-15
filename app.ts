@@ -1,8 +1,9 @@
 import {json, urlencoded} from "body-parser";
-import * as express from 'express';
 import * as compression from "compression";
+import * as express from 'express';
 
-import {testRouter} from "./routes/testRouter";
+import {testRouter} from "./src/routes/testRouter";
+import {userRouter} from "./src/routes/userRouter";
 
 const app: express.Application = express();
 
@@ -14,9 +15,10 @@ app.use(urlencoded({ extended: true }));
 
 // api routes
 app.use('/', testRouter);
+app.use('/user', userRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req:express.Request, res:express.Response, next:express.NextFunction) {
+app.use((req: express.Request, res: express.Response, next: express.NextFunction) => {
     const err = new Error('Not Found');
     next(err);
 });
