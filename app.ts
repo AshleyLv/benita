@@ -1,13 +1,14 @@
-import {json, urlencoded} from "body-parser";
-import * as compression from "compression";
+import {json, urlencoded} from 'body-parser';
+import * as compression from 'compression';
 import * as express from 'express';
 
-import {testRouter} from "./src/routes/testRouter";
-import {userRouter} from "./src/routes/userRouter";
+import {testRouter} from './src/routes/testRouter';
+import {userRouter} from './src/routes/userRouter';
+import {taskRouter} from './src/routes/taskRouter';
 
 const app: express.Application = express();
 
-app.disable("x-powered-by");
+app.disable('x-powered-by');
 
 app.use(json());
 app.use(compression());
@@ -16,6 +17,7 @@ app.use(urlencoded({ extended: true }));
 // api routes
 app.use('/', testRouter);
 app.use('/user', userRouter);
+app.use('/task', taskRouter);
 
 // catch 404 and forward to error handler
 app.use((req: express.Request, res: express.Response, next: express.NextFunction) => {

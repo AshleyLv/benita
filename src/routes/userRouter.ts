@@ -1,5 +1,5 @@
-import {Request, Response, Router} from "express";
-import {mysqlPool} from "../db/mysql";
+import {Request, Response, Router} from 'express';
+import {mysqlPool} from '../db/mysql2';
 
 const userRouter = Router();
 

@@ -1,5 +1,5 @@
-import * as mysql from 'mysql';
-import {mysqlConfigDev, mysqlConfigProd} from "../../config";
+import * as mysql from 'mysql2';
+import {mysqlConfigDev, mysqlConfigProd} from '../../config';
 
 const env = process.env.NODE_ENV;
 const config = env === 'prod' ? mysqlConfigProd : mysqlConfigDev;

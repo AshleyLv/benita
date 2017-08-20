@@ -4,7 +4,7 @@ export const mysqlConfigDev = {
     host: '127.0.0.1',
     port: 3306,
     database: 'catalyst',
-    user: 'root',
+    username: 'root',
     password: '123456',
 };
 
@@ -12,6 +12,6 @@ export const mysqlConfigProd = {
     host: '127.0.0.1',
     port: 3306,
     database: 'catalyst',
-    user: 'root',
+    username: 'root',
     password: '123456',
 };
