@@ -1,5 +1,5 @@
 import {Request, Response, Router} from 'express';
-import {mysqlPool} from '../db/mysql2';
+import {mysqlPool} from '../db/mysql';
 
 const userRouter = Router();
 
@@ -13,12 +13,11 @@ userRouter.get('/id/:id', (request: Request, response: Response) => {
             }
         });
     });
-
 });
 
 userRouter.get('/name/:name', (request: Request, response: Response) => {
     mysqlPool.getConnection((err, connection) => {
-        connection.query('INSERT INTO user (name) values (?)', [request.params.name], (error, results, fields) => {
+        connection.query('INSERT INTO user (username) values (?)', [request.params.name], (error, results, fields) => {
             response.json(results.insertId);
             connection.release();
             if (error) {

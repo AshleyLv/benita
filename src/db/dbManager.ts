@@ -1,6 +1,6 @@
 import {User} from '../models/user';
 import {Role} from '../models/role';
-import {slDB} from './sequelize-mysql2';
+import {slDB} from './sequelize-mysql';
 import {Plan} from '../models/plan';
 import {PlanType} from '../models/planType';
 import {DailySet} from '../models/dailySet';

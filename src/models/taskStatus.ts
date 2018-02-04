@@ -1,4 +1,4 @@
-import {Sequelize, slDB} from '../db/sequelize-mysql2';
+import {Sequelize, slDB} from '../db/sequelize-mysql';
 
 export const TaskStatus = slDB.define('TaskStatus', {
     id: {

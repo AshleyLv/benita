@@ -6,7 +6,7 @@ const config = env === 'prod' ? mysqlConfigProd : mysqlConfigDev;
 
 export const slDB = new sequelize(
     config.database,
-    config.username,
+    config.user,
     config.password,
     {
         host: config.host,
